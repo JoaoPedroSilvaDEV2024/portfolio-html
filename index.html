@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio - João Pedro Silva</title>
+
+   <!-- link cdn bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!-- arquivo css personalizado -->
+    <link rel="stylesheet" href="../portfolio-website_novo/css/style.css" />
+
+    <!-- link da fonte do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ícone bootstrap link cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <!-- Para adicionar animação ao site, usamos a biblioteca AOS
+Arquivo CSS da biblioteca AOS, link CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- link do cdn jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body style="background-color: black;">
+
+    <!-- 
+<div id="spinner" class="spinner-container">
+  <div class="spinner"></div>
+  <p class="loading-text">Carregando portfólio...</p>
+</div>-->
+ 
+<div id="loading-overlay">
+  <div class="curtain curtain1"></div>
+  <div class="curtain curtain2"></div>
+  <div class="curtain curtain3"></div>
+</div>
+
+<script>
+  window.addEventListener("load", function () {
+    const spinner = document.getElementById("spinner");
+    spinner.style.display = "none";
+  });
+</script>
+
+
+    <!-- barra de navegação inicia -->
+    <nav id="navbar-top" class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+
+      <div class="container-fluid px-5">
+        <a class="navbar-brand" href="">
+        <img src="../portfolio-website_novo/images/logonome.png" alt="Logo" style="height: 80px;"></a>
+         <button
+          class="nav-menu d-md-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="bi bi-menu-button-fill"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav gap-4" style="font-size: 1.1rem">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Lar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#service">Serviço</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfólio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonial">Testemunhos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Blogue</a>
+            </li>
+          </ul>
+        </div>
+        <button class="c-btn ms-4 py-2 px-4 rounded-pill d-none d-md-block">Contato</button>
+      </div>
+    </nav>
+    <!-- a barra de navegação termina aqui -->
+
+    <!-- seção inicial começa -->
+    <section class="home pt-5 pb-5" id="home">
+      <canvas id="ripple-canvas"></canvas>
+      <div class="row justify-content-evenly align-middle">
+        <!-- aqui data-aos é usado para adicionar animação aos -->
+        <div class="col-10 col-md-6 text-center text-md-start" data-aos="slide-right">
+          <h2 style="color: #FFF">
+            Olá! Eu Sou <br /><span class="c-orange">João Pedro Silva</span>
+          </h2>
+          <p class="text-muted">
+            Sou desenvolvedor web com 2 anos de experiência, especializado na criação de sites responsivos e interfaces modernas utilizando HTML, CSS, JavaScript, Bootstrap e React. Tenho foco em performance, usabilidade e boas práticas de código, entregando soluções eficientes, funcionais e visualmente atrativas.
+          </p>
+          <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+            Contrate-me
+          </button>
+          <a href="" class="link ms-4 d-none">See My Work</a>
+        </div>
+          <div class="photo-frame">
+             <img src="../portfolio-website_novo/images/linkedin.jpg" alt="Minha foto" class="profile-photo">
+          </div>
+       </div>   
+    </section>
+     
+      <section class="expertise mt-5" id="service">
+      <div class="heading text-center">
+        <small>Minha experiência</small>
+        <h3>
+          Fornece uma ampla gama <br />
+          de serviços digitais
+        </h3>
+      </div>
+      <div class="row justify-content-evenly mt-5">
+        <div class="col-10 col-md-4" data-aos="fade-up">
+          <div class="service-card">
+            <div class="img">
+              <img
+                src="../portfolio-website_novo/images/webdesignlogo.png"
+                class="w-25 img-fluid img"
+                alt=""
+              />
+            </div>
+            <div class="content mt-3">
+              <h4>Web Design</h4>
+              <p class="text-muted">
+                Web design é a criação visual e estrutural de sites, focando em layout, usabilidade, responsividade e acessibilidade, usando HTML, CSS e JavaScript.
+              </p>
+              <a href="https://pt.wikipedia.org/wiki/Web_design" class="link">Ler mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-10" data-aos="fade-up">
+          <div class="service-card">
+            <div class="img">
+              <img
+                src="../portfolio-website_novo/images/desenvolvimentoweblogopng.png"
+                class="w-25 img-fluid img"
+                alt=""
+              />
+            </div>
+            <div class="content mt-3">
+              <h4>Desenvolvimento Web</h4>
+              <p class="text-muted">
+                Desenvolvimento web é a construção e manutenção de sites e aplicativos, envolvendo front-end (interface visual) com HTML, CSS e JavaScript, e back-end (servidores, banco de dados) com linguagens como Python, PHP ou Node.js. O objetivo é criar soluções funcionais, rápidas e seguras para a web.
+              </p>
+              <a href="https://www.remessaonline.com.br/blog/desenvolvimento-web/" class="link">Ler mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-10" data-aos="fade-up">
+          <div class="service-card">
+            <div class="img">
+              <img
+                src="../portfolio-website_novo/images/buglogo.png"
+                class="w-25 img-fluid img"
+                alt=""
+              />
+            </div>
+            <div class="content mt-3">
+              <h4>Depuração</h4>
+              <p class="text-muted">
+                Depuração é o processo de identificar e corrigir erros ou falhas no código de um software. Envolve a análise detalhada do código, utilizando ferramentas e técnicas para encontrar bugs, testar diferentes cenários e garantir que o sistema funcione corretamente. O objetivo é melhorar a performance e a estabilidade da aplicação.
+              </p>
+              <a href="https://pt.wikipedia.org/wiki/Depura%C3%A7%C3%A3o" class="link">Ler mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    
+    <section class="skill mt-5 py-5" id="about">
+      <div class="row justify-content-evenly">
+       <div class="col-10 col-md-5 skill-with-progress" data-aos="slide-right">
+  <div class="progress-bar-group">
+    <div class="bar">
+      <label>HTML & CSS</label>
+      <div class="progress">
+        <div class="progress-fill html-css"><span class="progress-num">0%</span></div>
+      </div>
+    </div>
+    <div class="bar">
+      <label>JavaScript</label>
+      <div class="progress">
+        <div class="progress-fill javascript"><span class="progress-num">0%</span></div>
+      </div>
+    </div>
+    <div class="bar">
+      <label>Python</label>
+      <div class="progress">
+        <div class="progress-fill python"><span class="progress-num">0%</span></div>
+      </div>
+    </div>
+    <div class="bar">
+      <label>ReactJS</label>
+      <div class="progress">
+        <div class="progress-fill reactjs"><span class="progress-num">0%</span></div>
+      </div>
+    </div>
+    <div class="bar">
+      <label>TypeScript</label>
+      <div class="progress">
+        <div class="progress-fill typescript"><span class="progress-num">0%</span></div>
+      </div>
+    </div>
+    <div class="bar">
+      <label>Node.js</label>
+      <div class="progress">
+        <div class="progress-fill nodejs"><span class="progress-num">0%</span></div>
+      </div>
+    </div>
+    <div class="bar">
+      <label>SQL</label>
+      <div class="progress">
+        <div class="progress-fill sql"><span class="progress-num">0%</span></div>
+      </div>
+    </div>
+    <div class="bar">
+      <label>Git & GitHub</label>
+      <div class="progress">
+        <div class="progress-fill git"><span class="progress-num">0%</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="col-10 col-md-5 skill-detail" data-aos="slide-left">
+          <div class="heading mt-5 mt-md-3">
+            <small>Minhas Habilidades</small>
+            <h3>Experiências Digitais Lindas e Únicas</h3>
+            <p class="text-muted">
+             Possuo conhecimentos sólidos em HTML e CSS, essenciais para a criação e estilização de páginas web responsivas e atrativas. Tenho também experiência em JavaScript, React.js e TypeScript, que utilizo para desenvolver interfaces dinâmicas, interativas e escaláveis, garantindo aplicações modernas com código organizado e eficiente.
+            </p>
+            <p class="text-muted">
+             No desenvolvimento backend, atuo com Python e Node.js para a criação de APIs e sistemas robustos. Tenho domínio em SQL para gerenciamento de bancos de dados relacionais, assegurando a integridade e o desempenho das informações. Além disso, utilizo Git e GitHub para versionamento de código e colaboração em equipe, promovendo um fluxo de trabalho profissional e eficiente.
+            </p>
+            <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+              
+              <a
+                href=""
+                download="SampleCV"
+                style="text-decoration: none;color: #fff;"
+                >Download do Meu Currículo</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    
+    <section class="portfolio" id="portfolio">
+      <div class="heading text-center pt-5">
+        <small>Trabalhos Criativos</small>
+        <h3>Verifique meu portfólio</h3>
+      </div>
+
+      <div id="myBtnContainer" class="text-center mt-4">
+        
+        <button class="filter-item" data-filter="all">Todos</button>
+        <button class="filter-item" data-filter="game">Jogo</button>
+        <button class="filter-item" data-filter="webapp">Aplicativo Web</button>
+        <button class="filter-item" data-filter="website">Site</button>
+        <button class="filter-item" data-filter="brand">Marca</button>
+      </div>
+      <div class="portfolio-body">
+        <div class="row justify-content-evenly px-4">
+          <div class="post col-md-4 game all col-10 mt-3 mt-md-0" data-aos="fade-up">
+            <div class="card">
+              <img src="../portfolio-website_novo/images/pokemonatualizado.png" class="card-img-top" alt="..." />
+              <div class="card-body text-center">
+                <h4 class="card-title">Super Trunfo Pokemon</h4>
+                <span class="badge bg-secondary badge-pill">HTML&CSS</span>
+                <span class="badge bg-secondary badge-pill">JavaScript</span>
+                <span class="badge bg-secondary badge-pill mb-2">Game</span
+                ><br />
+                <a href="#" class="link">Ler mais</a>
+              </div>
+            </div>
+          </div>
+          <div class="post col-md-4 website all col-10 mt-3 mt-md-0" data-aos="fade-up">
+            <div class="card">
+              <img
+                src="../portfolio-website_novo/images/mediaaluno.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <h4 class="card-title">Calculadora de Média de Aluno</h4>
+                <span class="badge bg-secondary badge-pill">HTML&CSS</span>
+                <span class="badge bg-secondary badge-pill">Python</span>
+                <span class="badge bg-secondary badge-pill mb-2">Website</span
+                ><br />
+                <a href="#" class="read-more-btn link">Ler Mais</a>
+              </div>
+            </div>
+          </div>
+          <div class="post col-md-4 webapp all col-10 mt-3 mt-md-0" data-aos="fade-up">
+            <div class="card">
+              <img src="../portfolio-website_novo/images/jokenpo_novao.png" class="card-img-top" alt="..." />
+              <div class="card-body text-center">
+                <h4 class="card-title">Jogo Jokenpo</h4>
+                <span class="badge bg-secondary badge-pill">HTML&CSS</span>
+                <span class="badge bg-secondary badge-pill">JavaScript</span>
+                <span class="badge bg-secondary badge-pill mb-2">WebApp</span
+                ><br />
+                <a href="#" class="read-more-btn link">Ler Mais</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-evenly mt-4 px-4">
+          <div class="post col-md-4 game all col-10 mt-3 mt-md-0" data-aos="fade-up">
+            <div class="card">
+              <img src="../portfolio-website_novo/images/jogggomeeeemoria.jpg" class="card-img-top" alt="..." />
+              <div class="card-body text-center">
+                <h4 class="card-title">Jogo da Memória</h4>
+                <span class="badge bg-secondary badge-pill">HTML&CSS</span>
+                <span class="badge bg-secondary badge-pill">JavaScript</span>
+                <span class="badge bg-secondary badge-pill mb-2">App</span
+                ><br />
+                <a href="#" class="read-more-btn link">Ler Mais</a>
+              </div>
+            </div>
+          </div>
+          <div class="post col-md-4 website all col-10 mt-3 mt-md-0" data-aos="fade-up">
+            <div class="card">
+              <img src="../portfolio-website_novo/images/imc.png" class="card-img-top" alt="..." />
+              <div class="card-body text-center">
+                <h4 class="card-title">Calculadora de IMC</h4>
+                <span class="badge bg-secondary badge-pill">HTML&CSS</span>
+                <span class="badge bg-secondary badge-pill">JavaScript</span>
+                <span class="badge bg-secondary badge-pill mb-2">Game</span
+                ><br />
+                <a href="#" class="read-more-btn link">Ler Mais</a>
+              </div>
+            </div>
+          </div>
+          <div class="post col-md-4 all col-10 mt-3 mt-md-0" data-aos="fade-up">
+            <div class="card">
+              <img
+                src="../portfolio-website_novo/images/calcuuuuladoraaaalaranja.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body text-center">
+                <h4 class="card-title">Calculadora Web</h4>
+                <span class="badge bg-secondary badge-pill">HTML&CSS</span>
+                <span class="badge bg-secondary badge-pill">JavaScript</span>
+                <span class="badge bg-secondary badge-pill mb-2">Web App</span
+                ><br />
+                <a href="#" class="read-more-btn link">Ler Mais</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    
+    <section class="testimonial mt-5 pt-5" id="testimonial">
+      <div class="row justify-content-evenly">
+        <div class="col-md-4 col-10" data-aos="slide-right">
+          <img src="../portfolio-website_novo/images/comentario.png" class="img-fluid" alt="" />
+        </div>
+        <div class="col-md-6 col-10 mt-5" data-aos="slide-left">
+          <div class="heading">
+            <small>Testemunhos</small>
+            <h3>Feedback de Pessoas satisfeitos</h3>
+            
+            <div
+              id="carouselExampleControls"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row justify-content-evenly">
+                    <div class="col-2 text-center">
+                      <i class="bi bi-quote"></i>
+                    </div>
+                    <div class="col-10">
+                      <p class="text-muted">
+                       Ele sabe construir sites bons, com design moderno, navegação simples e ótimo desempenho. O trabalho dele une beleza e funcionalidade, deixando o site fácil de usar e visualmente atraente. Dá pra perceber que entende muito bem do assunto e faz tudo com qualidade.
+                      </p>
+                      <h4>Daniel Petinice</h4>
+                      <small class="fs-6 text-muted">Professor do SENAI</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row justify-content-evenly">
+                    <div class="col-2 text-center">
+                      <i class="bi bi-quote"></i>
+                    </div>
+                    <div class="col-10">
+                      <p class="text-muted">
+                        Ele manda muito bem na criação de sites, entregando projetos com ótimo visual, organização e usabilidade. Seus sites são bem estruturados, rápidos e agradáveis de navegar, mostrando que ele realmente domina a arte de desenvolver páginas eficientes e bonitas.
+                      </p>
+                      <h4>Caio</h4>
+                      <small class="fs-6 text-muted">Professor do SENAI</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row justify-content-evenly">
+                    <div class="col-2 text-center">
+                      <i class="bi bi-quote"></i>
+                    </div>
+                    <div class="col-10">
+                      <p class="text-muted">
+                       ...
+                      </p>
+                      <h4>...</h4>
+                      <small class="fs-6 text-muted">...</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="nextprev-btn rounded-pill prev-btn"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev"
+              >
+                <i class="bi bi-arrow-left-circle-fill prev"></i>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="nextprev-btn rounded-pill next-btn"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="next"
+              >
+                <i class="bi bi-arrow-right-circle-fill next"></i>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    
+    <section class="blog mt-5 pb-5" id="blog">
+      <div class="heading text-center pt-5">
+        <small>Últimas Notícias</small>
+        <h3>Blog e artigos</h3>
+      </div>
+      <div class="row justify-content-evenly px-4 mt-4" data-aos="fade-up">
+        <div class="blogpost col-md-4 col-10 mt-2 mt-md-0 game all">
+          <div class="card">
+            <img
+              src="../portfolio-website_novo/images/pokemonatualizado.png"
+              class="card-img-top rounded-4"
+              alt="..."
+            />
+            <div class="card-body px-4">
+              <small>Por João Pedro Silva</small
+              ><span class="ms-3">Maio 27,2025</span>
+              <h4 class="card-title">
+                <a href="">Super Trunfo Pokemon</a>
+              </h4>
+              <p class="text-muted">
+                O Super Trunfo Pokémon é uma versão divertida e estratégica do clássico jogo de cartas, onde os jogadores comparam atributos dos seus Pokémon favoritos para vencer as partidas. Com ilustrações coloridas e personagens icônicos, o jogo conquista fãs de todas as idades, unindo nostalgia e competição em partidas rápidas e emocionantes.
+              </p>
+              <a href="#" class="read-more-btn link" data-bs-toggle="modal" data-bs-target="#exampleModal1">Ler mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="blogpost col-md-4 col-10 mt-5 mt-md-0 website all">
+          <div class="card">
+            <img
+              src="../portfolio-website_novo/images/mediaaluno.png"
+              class="card-img-top rounded-4"
+              alt="..."
+            />
+            <div class="card-body px-4">
+              <small>Por João Pedro Silva</small
+              ><span class="ms-3">Maio 27,2025</span>
+              <h4 class="card-title">
+                <a href="">Calculadora de Média de Aluno</a>
+              </h4>
+              <p class="text-muted">
+               A calculadora de média escolar vem ganhando destaque entre estudantes, oferecendo uma forma prática de acompanhar o desempenho ao longo do ano. Com ela, é possível inserir notas de provas e trabalhos, obtendo a média final com facilidade. A ferramenta é útil para quem quer se organizar melhor e saber quanto precisa para alcançar a aprovação.
+              </p>
+              <a href="#" class="read-more-btn link" data-bs-toggle="modal" data-bs-target="#exampleModal2">Ler Mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="blogpost col-md-4 col-10 mt-5 mt-md-0 webapp all">
+          <div class="card">
+            <img
+              src="../portfolio-website_novo/images/imc.png"
+              class="card-img-top rounded-4"
+              alt="..."
+            />
+            <div class="card-body px-4">
+              <small>Por João Pedro Silva</small
+              ><span class="ms-3">Maio 27,2025</span>
+              <h4 class="card-title">
+                <a href="">Calculadora de IMC</a>
+              </h4>
+              <p class="text-muted">
+               A calculadora de IMC é uma ferramenta simples que mostra se a pessoa está dentro do peso ideal. Basta informar altura e peso para obter o índice de massa corporal. Com isso, é possível saber se está abaixo, dentro ou acima do recomendado, ajudando a cuidar melhor da saúde.
+              </p>
+              <a href="#" class="read-more-btn link" data-bs-toggle="modal" data-bs-target="#exampleModal3">Ler Mais</a>
+            </div>
+          </div>
+        </div>
+       
+              
+        <button type="button" class="btn-c rounded-pill" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
+              
+     
+                <button type="button" class="btn-c rounded-pill" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
+              
+                <button type="button" class="btn-c rounded-pill" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
+              
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+   
+    <section class="contact py-5" id="contact">
+      <div class="heading text-center">
+        <small>Entre em contato</small>
+        <h3>Gostou de mim? Quer me contratar? É só chamar!</h3>
+      </div>
+      <div class="row justify-content-evenly mt-5" style="color: #ffffff;">
+        <div class="col-md-5 col-10 contact-details" data-aos="slide-right">
+          <div class="row justify-content-evenly">
+            <div class="col-1">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <div class="col-11">
+              <p>Cajamar-SP, Brasil</p>
+            </div>
+          </div>
+          <div class="row justify-content-evenly">
+            <div class="col-1">
+              <i class="bi bi-telephone-fill"></i>
+            </div>
+            <div class="col-11">
+              <p>+55 11 97544-5487</p>
+            </div>
+          </div>
+          <div class="row justify-content-evenly">
+            <div class="col-1">
+              <i class="bi bi-send-fill"></i>
+            </div>
+            <div class="col-11">
+              <p>jp9293392@gmail.com</p>
+            </div>
+          </div>
+          <div class="row justify-content-evenly">
+            <div class="col-1">
+              <i class="bi bi-globe-americas"></i>
+            </div>
+            <div class="col-11">
+              <p>.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 col-10 mt-3 mt-md-0" data-aos="slide-left">
+          <div class="contact-form">
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Nome"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="E-mail"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Numero de Celular"
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                placeholder="Mensagem"
+                rows="5"
+              ></textarea>
+            </div>
+            <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+
+      
+    <button
+      type="button"
+      class="btn btn-floating btn-lg rounded-pill"
+      id="btn-back-to-top"
+    >
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    
+    <footer class="text-center text-muted py-4">
+       <div data-aos="fade-up" class="pt-4">
+  <a href="">
+    <img src="../portfolio-website_novo/images/logonome.png" alt="Logo" style="height: 80px;">
+  </a>
+</div>
+
+      <div class="link-group mt-5" data-aos="fade-up">
+        <a href="#home">Lar</a>
+        <div class="vr"></div>
+        <a href="#about">Sobre</a>
+        <div class="vr"></div>
+        <a href="#service">Serviço</a>
+        <div class="vr"></div>
+        <a href="#portfolio">Portfólio</a>
+        <div class="vr"></div>
+        <a href="#blog">Blogue</a>
+        <div class="vr"></div>
+        <a href="#contact">Contato</a>
+      </div>
+      <div class="social-links mt-5" data-aos="fade-up">
+        <button href="" class="rounded-pill dribble">
+          <i class="bi bi-dribbble"></i>
+        </button>
+        <button href="" class="rounded-pill whatsapp">
+          <i class="bi bi-whatsapp"></i>
+        </button>
+        <button href="" class="rounded-pill behance">
+          <i class="bi bi-behance"></i>
+        </button>
+        <button href="" class="rounded-pill instagram">
+      <i class="bi bi-instagram"></i>
+    </button>
+    <button href="" class="rounded-pill github">
+      <i class="bi bi-github"></i>
+    </button>
+      </div>
+      <hr class="text-muted my-4" />
+
+      <p>Copyright 2025 Portfólio | Todos os direitos reservados</p>
+    </footer>
+    
+
+      
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      
+      AOS.init({
+        duration: 1000,
+        offset: 50,
+      });
+    </script>
+    
+    <script src="../portfolio-website_novo/js/script.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,726 @@
+/*.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #fff;
+  border-top: 6px solid #00ffcc;
+  border-radius: 50%;
+  animation: spin 9s linear infinite;
+}
+
+.loading-text {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  animation: fadeIn 9s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0.8; }
+  100% { opacity: 9; }
+}
+*/
+
+/* Moldura da imagem */
+.photo-frame {
+    width: 250px; /* Largura maior, por exemplo */
+    height: 200px; /* Altura maior, por exemplo */
+    background-color: #fff;
+    overflow: hidden;
+    margin: 0 auto;
+    position: absolute;
+    top: -90px; /* Ajuste da posição para afastar a moldura do topo */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px; /* Bordas arredondadas (opcional) */
+}
+
+/* Imagem dentro da moldura */
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir todo o espaço da moldura */
+    border-radius: 15px; /* Bordas arredondadas na imagem também */
+}
+
+/* Conteúdo principal da home */
+.home-content {
+    position: relative;
+    z-index: 1;
+    margin-top: 130px; /* Adiciona o espaço para não sobrepor a moldura */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .photo-frame {
+        top: -80px; /* Ajuste da posição da moldura para não sobrepor o texto */
+        width: 150px; /* A moldura fica um pouco menor em telas pequenas */
+        height: 150px; /* A moldura fica um pouco menor em telas pequenas */
+    }
+
+    .home .row {
+        display: flex;
+        flex-direction: column; /* Layout em coluna para telas pequenas */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home .col-10 {
+        text-align: center; /* Garante que o texto do título fique centralizado */
+    }
+
+    .home h2 {
+        font-size: 2rem; /* Ajusta o tamanho da fonte em telas pequenas */
+    }
+
+    .home p {
+        font-size: 1rem; /* Ajusta o tamanho do texto da descrição */
+    }
+
+    .home .c-btn {
+        font-size: 1rem; /* Ajusta o tamanho do botão */
+        padding: 12px 25px;
+    }
+
+    /* Desloca o conteúdo para baixo em telas pequenas */
+    .home-content {
+        margin-top: 180px; /* Espaço suficiente para a moldura não sobrepor o conteúdo */
+    }
+}
+
+/* Responsividade para dispositivos grandes (Desktops, Tablets) */
+@media (min-width: 769px) {
+    .photo-frame {
+        top: 0px; /* Mantém a moldura no topo da seção em telas maiores */
+        left: auto;
+        border-radius: 100px;
+        right: auto;
+        margin: 0 0 0 1080px; /* Ajuste de margens para manter o texto alinhado */
+    }
+
+    .home .row {
+        flex-direction: row; /* Alinha os elementos em linha nas telas grandes */
+    }
+
+    .home h2 {
+        font-size: 3rem; /* Ajuste para tamanhos maiores */
+    }
+
+    .home p {
+        font-size: 1.2rem; /* Ajuste para tamanhos maiores */
+    }
+
+    .home .c-btn {
+        font-size: 1.2rem; /* Ajuste para tamanhos maiores */
+        padding: 15px 30px;
+    }
+}
+
+
+/* Exemplo de animação só quando a página estiver pronta */
+.start-animations .section-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-title {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 9999;
+  background: #030303; 
+}
+
+.curtain {
+  width: 33.33%;
+  height: 100%;
+  background: #007bff; /* Azul cortina */
+  transform: translateY(0);
+  transition: transform 1s ease;
+}
+
+.curtain1 {
+  transition-delay: 0.2s;
+}
+
+.curtain2 {
+  transition-delay: 0.4s;
+}
+
+.curtain3 {
+  transition-delay: 0.6s;
+}
+
+#loading-overlay.loaded .curtain {
+  transform: translateY(-100%);
+}
+
+.skill-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 4px;
+  }
+  
+#ripple-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.home {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+.progress-bar-group .bar {
+  margin-bottom: 20px;
+}
+.progress-bar-group label {
+  font-weight: 600;
+  color: #fff;
+  display: block;
+  margin-bottom: 5px;
+}
+.progress {
+  background: #ddd;
+  height: 18px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  color: #000;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 10px;
+  line-height: 18px;
+  border-radius: 10px;
+  width: 0;
+  animation: fillProgress 2s ease-in-out forwards;
+}
+
+@keyframes fillProgress {
+  from { width: 0; }
+  to { width: var(--width); }
+}
+
+.progress-fill.html-css {
+  background: #ff7f00;      /* cor nova: laranja escuro */
+  --width: 90%;
+}
+.progress-fill.javascript {
+  background: #e3fc05;
+  --width: 75%;
+}
+.progress-fill.python {
+  background: #0a30ee;
+  --width: 80%;
+}
+.progress-fill.reactjs {
+  background: #3f396d;
+  --width: 30%;
+}
+.progress-fill.typescript {
+  background: #007acc;
+  --width: 60%;
+}
+.progress-fill.nodejs {
+  background: #68a063;
+  --width: 50%;
+}
+.progress-fill.sql {
+  background: #004d99;     /* cor nova: azul escuro */
+  --width: 65%;
+}
+.progress-fill.git {
+  background: #f1502f;
+  --width: 85%;
+}
+
+
+
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}
+
+/* impede o scroll horizontal */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+.nav-menu{
+    border: none;
+    background-color: #000000;
+    font-size: 1.5rem;
+    color: #255AFC;
+}
+
+.navbar-nav a{
+    color: #fff;
+    position: relative;
+}
+
+#navbar-top {
+  background-color: #000 !important;
+}
+
+.navbar-nav a:hover{
+    color: #255AFC;
+}
+.navbar-nav a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    top: 35px;
+    position: absolute;
+    background: #255AFC;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+.navbar-nav a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+
+.c-btn{
+    border: none;
+    background: #255AFC;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.home{
+    background: linear-gradient(33deg, rgb(12, 12, 11) 0%, rgba(11 11 12) 100%);
+    padding: 30px 0px 10px 0px;
+}
+.home h2{
+    font-size: 3rem;
+    line-height: 4rem;
+}
+.c-orange{
+    color: #255AFC;
+    font-weight: 700;
+    font-size: 4rem;
+}
+.home p{
+    width: fit-content;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+.h-btn:hover{
+    background: #073ad3;
+    color: #fff;
+    transform: translateY(-20px);
+    transition-duration: 1s;
+}
+.link{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #255AFC;
+    position: relative;
+}
+.link::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    top: 20px;
+    background-color: #0735be;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.link:hover{
+    color: #0735be;
+}
+.link:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.home img{
+    animation: floatimg 4s ease-in-out infinite;
+}
+
+@keyframes floatimg {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-24px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+.expertise {
+    background-color: #000;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.expertise .row {
+    margin-top: 500;
+    margin-bottom: 500;
+}
+
+
+.heading small{
+    color: #fcf7f7;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.heading h3{
+    margin-top: 0.5rem;
+    color: #f8f3f3;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.expertise h4{
+    color: #fff;
+    font-weight: 700;
+}
+.expertise a{
+    text-decoration: none;
+    color: #fff;
+}
+.expertise a:hover{
+    color: #255AFC;
+}
+.expertise .service-card{
+    text-align: center;
+    padding: 15px 15px;
+    border-radius: 0.7rem;
+}
+
+
+.skill{
+    background-color: rgb(4, 4, 4);
+}
+.progress-card{
+    padding: 12% 10% 10% 15%;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10%;
+}
+.progress-card:hover{
+    transform: scale(1.1,1.1);
+    transition-duration: 0.6s;
+}
+.circular-progress{
+    position: relative;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-value{
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.html-progress{
+    color: #fca61f;
+}
+.javascript-progress{
+    color: #e3fc05;
+}
+.php-progress{
+    color: #0a30ee;
+}
+.reactjs-progress{
+    color: #3f396d;
+}
+.text{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.heading p{
+    font-size: 1.3rem;
+}
+
+
+#myBtnContainer{
+    margin-bottom: 45px;
+}
+#myBtnContainer button{
+  border: none;
+  color: white;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;   
+  display: inline-block;
+  margin: 0 25px;
+}
+#myBtnContainer button:hover{
+    color: #255AFC;
+}
+
+#myBtnContainer button:focus{
+    outline: none;
+}
+.post .content h4{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.post .card{
+    border: none;
+}
+
+
+.testimonial img:hover{
+    transform: scale(1.2,1.2);
+    transition-duration: 1s;
+}
+.testimonial h4{
+    color: #255AFC;
+}
+.testimonial i{
+    font-size: 2.9rem;
+    color: #255AFC;
+    
+}
+.testimonial .nextprev-btn{
+    border: none;
+    background-color: #020202;
+}
+.prev:hover,.prev-btn:hover{
+    color:#0d02a4;
+    transform: translateX(-10px);
+    transition-duration: 1s;
+}
+.next:hover,.next-btn:hover{
+    color:#0d02a4;
+    transform: translateX(10px);
+    transition-duration: 1s;
+}
+
+
+.blog{
+    background-color: #0b0b0b;
+}
+.blog .blogpost .card{
+    border: none;
+    border-radius: 5%;
+}
+.nav-bg{
+    background-color: #fff;
+}
+
+.blog .blogpost small{
+    color: #255AFC;
+    font-size: 1.1rem;
+}
+.blog .blogpost h4,.blogpost a{
+    color: #255AFC;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+.blogpost a:hover{
+    color: #255AFC;
+}
+.blog .blogpost .read-more-btn{
+    text-decoration: none;
+    color: #0b0b0b;
+    font-size: 1.1rem;
+}
+.blog .blogpost .read-more-btn:hover{
+    color: #255AFC;
+}
+
+.btn-c{
+    margin-left: 94%;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    margin-top: -3%;
+}
+.btn-c i{
+    color: #fca61f;
+}
+.modal-body .content span{
+    font-size: 1rem;
+}
+.modal-body .content small{
+    font-size: 1rem;
+    color: #6f34fe;
+}
+
+.contact{
+    background-color: #060606;
+}
+.contact-details i{
+    font-size: 1.5rem;
+    color: #255AFC;
+}
+.contact-details p{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+.contact-form .form-control:focus{
+    box-shadow: none;
+    border: 1px solid #fca61f;
+}
+.contact-form .form-control{
+    padding: 10px 10px;
+    width: 80%;
+}
+
+
+footer{
+    background-color: #262323;
+}
+
+footer .link-group a{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+footer .link-group a:hover{
+    color: #255afc;
+}
+.social-links button{
+    border: none;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+    padding: 14px 15px 10px 15px;
+}
+.social-links .dribble{
+    color: #ff005d;
+}
+.social-links button:hover{
+    color: #fff;
+    transform: translateY(-20px);
+    transition-duration: 1s;
+}
+.social-links .dribble:hover{
+    background-color: #ff005d;
+}
+.social-links .whatsapp{
+    color: #25D366;
+}
+.social-links .whatsapp:hover{
+    background-color: #25D366;
+}
+.social-links .behance{
+    color: #255afc;
+}
+.social-links .behance:hover{
+    background-color: #255afc;
+}
+
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    font-size: 1.4rem;
+    background-color: #255afc;
+    color: #fff;
+    animation: pulse 3s infinite;
+}
+
+.social-links button {
+  border: none;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  background-color: #fff;
+  padding: 14px 15px 10px 15px;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.8s ease, color 0.8s ease, background-color 0.8s ease;
+}
+
+.social-links button:hover {
+  color: #fff;
+  transform: translateY(-20px);
+}
+
+.social-links .instagram {
+  color: #E1306C; /* cor rosa padrão Instagram */
+}
+
+.social-links .instagram:hover {
+  background-color: #E1306C;
+  color: #fff;
+  transform: translateY(-20px);
+  transition-duration: 1s;
+}
+
+
+/* GitHub */
+.social-links .github {
+  color: #333333; /* cinza escuro do GitHub */
+}
+.social-links .github:hover {
+  background-color: #333333;
+  color: #fff;
+}
